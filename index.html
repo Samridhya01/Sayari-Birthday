@@ -32,24 +32,19 @@
       <div class="box"></div>
     </div>
 </body>
+  <script>
+    // Function to play the background music
+    function playMusic() {
+      var audio = new Audio('./Song.mp3'); // Replace with the actual path
+      audio.loop = true; // Enable looping
+      audio.play();
+    }
+
+    // Play music on page load and on any touch event
+    window.onload = playMusic;
+    document.addEventListener('touchstart', playMusic, false); 
+  </script>
 <script src="scripts/confetti.min.js" charset="utf-8"></script>
 <script src="scripts/index.js" charset="utf-8"></script>
-</script>
-    <noscri<img src="https://piwik.d0n9x1n.dev/matomo.php?idsite=4&amp;rec=1" style="border:0;" alt="" /></p></noscript>
 
-        <audio id="backgroundMusic" loop>
-            <source src="./song.mp3" type="audio/mpeg"
-            Your browser does not support the audio element.
-        </audio>
-
-        <script>
-            document.addEventListener('click', function() {
-                var audio = document.getElementById('backgroundMusic');
-                if (audio.paused) {
-                    audio.play().catch(function(error) {
-                        console.error('Error playing audio:', error);
-                    });
-                }
-            });
-        </script>
 </html>
