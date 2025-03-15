@@ -9,30 +9,64 @@
   <link rel="stylesheet" href="styles/flexbox-center-container.css" media="all">
   <link rel="stylesheet" href="styles/system-fonts.css" media="all">
   <link rel="stylesheet" href="styles/style.css" media="all">
+  
+  <style>
+    /* Button Style */
+    .zee-button {
+      display: block;
+      width: 200px;
+      margin: 20px auto;
+      padding: 15px;
+      background-color: #ff4500;
+      color: white;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 10px rgba(255, 69, 0, 0.5);
+    }
+
+    .zee-button:hover {
+      background-color: #e63e00;
+      box-shadow: 0 4px 15px rgba(255, 69, 0, 0.8);
+    }
+  </style>
 </head>
 
 <body>
-  <canvas id=c></canvas>
+  <canvas id="c"></canvas>
   <canvas id="confetti"></canvas>
+
   <div class="container" id="count">
     <h1 id="head">Countdown to your birthday:</h1>
     <ul>
-      <li><span id="day"></span>days</li>
-      <li><span id="hour"></span>hours</li>
-      <li><span id="minute"></span>minutes</li>
-      <li><span id="second"></span>seconds</li>
+      <li><span id="day"></span> days</li>
+      <li><span id="hour"></span> hours</li>
+      <li><span id="minute"></span> minutes</li>
+      <li><span id="second"></span> seconds</li>
     </ul>
   </div>
+
   <div id="merrywrap" class="merrywrap">
     <canvas id="snowfall"></canvas>
     <div class="giftbox">
-      <div class="cover">
-        <div></div>
-      </div>
+      <div class="cover"><div></div></div>
       <div class="box"></div>
     </div>
-</body>
+  </div>
+
+  <!-- Zee Bangla Button -->
+  <button class="zee-button" onclick="goToZeeBangla()">Go to Zee Bangla</button>
+
   <script>
+    // Function to navigate to ZeeBangla.html
+    function goToZeeBangla() {
+      window.location.href = "zeebangla.html";
+    }
+
     // Function to play the background music
     function playMusic() {
       var audio = new Audio('./Song.mp3'); // Replace with the actual path
@@ -42,9 +76,11 @@
 
     // Play music on page load and on any touch event
     window.onload = playMusic;
-    document.addEventListener('touchstart', playMusic, false); 
+    document.addEventListener('touchstart', playMusic, false);
   </script>
-<script src="scripts/confetti.min.js" charset="utf-8"></script>
-<script src="scripts/index.js" charset="utf-8"></script>
 
+  <script src="scripts/confetti.min.js" charset="utf-8"></script>
+  <script src="scripts/index.js" charset="utf-8"></script>
+
+</body>
 </html>
